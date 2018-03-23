@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="css/leaflet.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+
+    <!-- Start HTML -->
+    <div id="sidebar">
+      <h2 id="slideName">Locate your ideal Housing Counseling Agency</h2>
+      <!-- description  -->
+      <div id="mydescription0" class = "description">
+        <p>This is presentation about the 28 Housing Counseling Agencies in Philadelphia.</p>
+        <p>Agencies will be visualized by zipcode wealth, if they help those seeking to prevent foreclosure, serves seniors, and will counsel without homeownershp.</p>
+        <p>Legends in the upper left will indicate classifications type of services provided.</p>
+        <p>You can also click the points on the maps to check out their name and address.</p>
+      </div>
+      <div id="mydescription1" class="description" style="display: none">
+        <p>The map to the left categorizes the zipcodes of Philadelphia by median income</p>
+        <p>Zipcodes were categorized as follows</p>
+        <table>
+          <tr><th>Bottom 20%:</th><td>19108, 19112, 19133, 19121, 19122, 19132, 19140, 19134, 19123, 19139</td></tr>
+          <tr><th>20% to 40%:</th><td>19107, 19146, 19143, 19142, 19145, 19148, 19144, 19124, 19125</td></tr>
+          <tr><th>40% to 60%:</th><td>19141, 19131, 19120, 19137, 19138, 19151, 19147, 19135, 19126, 19102</td></tr>
+          <tr><th>60% to 80%:</th><td>19136, 19129, 19153, 19149, 19152, 19103, 19111, 19130, 19115</td></tr>
+          <tr><th>Top 20%:</th><td>19114, 19150, 19127, 19128, 19116, 19119, 19154, 19118, 19106, 19113</td></tr>
+        </table>
+        <p>Bigger circles symbolize counseling centers in poorer zipcodes.</p>
+        <p>It is encouraging to see that many of the circles are bigger; this indicates that the counseling centers are locating in areas of need.</p>
+      </div>
+      <div id="mydescription2" class="description" style="display: none">
+        <p>This map shows Housing Counseling Agencies which will help with preventative foreclosure counseling.</p>
+        <p>Only two do not help.</p>
+        <p>This is also positive. Foreclosure and home loss is one of the most devestating experiences for any person or family</p>
+      </div>
+      <div id="mydescription3" class="description" style="display: none">
+        <p>This map shows Housing Counseling Agencies which will help with seniors explicity.</p>
+        <p>Only three are tailored to serve seniors explicitly</p>
+        <p>There should probably be more centers with senior support because housing becomes a greater burden as one ages.</p>
+      </div>
+      <div id="mydescription4" class="description" style="display: none">
+        <p>This map shows Housing Counseling Agencies which participate in pre-purchase counseling</p>
+        <p>Pre-purchase counseling is a "program [which] covers topics like financial management, evaluating credit information, prequalifying & loan approval, financing options, shopping for a home, finalizing the loan, the closing process, maintaining your new home, avoiding foreclosure and predatory lending practices.".</p>
+        <p>HUD sponsors housing counseling agencies which provide this service.</p>
+        <p>All but two agencies in Philadelphia provide this service.</p>
+      </div>
+      <div id="mydescription5" class="description" style="display: none">
+        <p>I want to highlight Action Wellness (formerly Action Aids) </p>
+        <p>Although this is their main office in a richer zipcode, the also have a satelite office in North Philadelphia</p>
+        <p>They do a lot of important work for people living with chronic illnesses, not just HIV/AIDS;</p>
+        <p>Consider learning more about them <a href="https://www.actionwellness.org/about-us/our-mission/">here</a></p>
+      </div>
+      <div id = "buttons">
+        <button id="button-previous" class = "buttons" style="display: none;">Previous</button>
+        <button id="button-next" class = "buttons">Next</button>
+      </div>
+      <!-- page number -->
+      <div id = "pageNumber">
+        1
+      </div>
+
+    </div>
+    <div id="map" style="position: absolute; right: 0; left: 350px; top: 0; bottom: 0; height: 100%"></div>
+
+    <!-- Legend -->
+    <div id="legend1" class="legend" style="display: none;">
+      <div class="legend-item">
+        <div id="zip20" class = "circle1"></div>
+        Bottom 20%
+      </div>
+      <div class="legend-item">
+        <div id="zip40" class = "circle1"></div>
+        20% to 40%
+      </div>
+      <div class="legend-item">
+        <div id="zip60" class = "circle1"></div>
+        40% to 60%
+      </div>
+      <div class="legend-item">
+        <div id="zip80" class = "circle1"></div>
+        60% to 80%
+      </div>
+      <div class="legend-item">
+        <div id="zip100" class = "circle1"></div>
+        Top 20%
+      </div>
+    </div>
+
+    <div id="legend2" class="legend" style="display: none;">
+      <div class="legend-item">
+        <div id="yP" class = "circle2"></div>
+        Yes Prevention
+      </div>
+      <div class="legend-item">
+        <div id="nP" class = "circle2"></div>
+        No Prevention
+      </div>
+    </div>
+
+    <div id="legend3" class="legend" style="display: none;">
+      <div class="legend-item">
+        <div id="yS" class = "circle2"></div>
+        Yes Seniors
+      </div>
+      <div class="legend-item">
+        <div id="nS" class = "circle2"></div>
+        No Seniors
+      </div>
+    </div>
+
+    <div id="legend4" class="legend" style="display: none;">
+      <div class="legend-item">
+        <div id="yPP" class = "circle2"></div>
+        Yes Pre-purchase
+      </div>
+      <div class="legend-item">
+        <div id="nPP" class = "circle2"></div>
+        No Pre-purchase
+      </div>
+    </div>
+
+    <div id="legend5" class ="legend" style="display: none;">
+      <div class="legend-item">
+        <div id="yP" class = "circle2"></div>
+        Yes Prevention
+      </div>
+      <div class="legend-item">
+        <div id="nP" class = "circle2"></div>
+        No Prevention
+      </div>
+
+      <div class="legend-item">
+        <div id="zip20" class = "circle1"></div>
+        Bottom 20%
+      </div>
+      <div class="legend-item">
+        <div id="zip40" class = "circle1"></div>
+        20% to 40%
+      </div>
+      <div class="legend-item">
+        <div id="zip60" class = "circle1"></div>
+        40% to 60%
+      </div>
+      <div class="legend-item">
+        <div id="zip80" class = "circle1"></div>
+        60% to 80%
+      </div>
+      <div class="legend-item">
+        <div id="zip100" class = "circle1"></div>
+        Top 20%
+      </div>
+    </div>
+    <!-- End HTML -->
+
+    <!-- Start Javascript Imports -->
+    <script src="js/jquery-2.2.0.js"></script>
+    <script src="js/underscore.js"></script>
+    <script src="js/leaflet.js"></script>
+    <script src="js/slideModel.js"></script>
+    <script src="js/midtermFunctions.js"></script>
+    <script src="js/basicApplication.js"></script>
+    <!-- End Javascript Imports -->
+
+  </body>
+</html>
