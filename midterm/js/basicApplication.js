@@ -1,18 +1,3 @@
-/* ================================
-Week 6 Assignment: Basic Application
-
-Take a look at the midterm prototype: https://marvelapp.com/bf2c9h/screen/10434841
-Try clicking on the "Next" and "Previous" buttons. This task will ask you to write some functions
-that will enable us to write an application like in the midterm.
-
-Write three functions: clickNextButton, clickPreviousButton, and saySlideName.
-clickNextButton and clickPreviousButtons should simulate what will happen when someone clicks
-on a next or previous button in your application.
-
-You don't need to create HTML buttons or a useable application—this exercise is asking you to create
-functions that will be used in your application. To test it out, try calling the functions in your
-console. For example, try running: clickNextButton() and see what it does. Use lots of console logs!
-================================ */
 var state = {
   slideNumber: 0
 };
